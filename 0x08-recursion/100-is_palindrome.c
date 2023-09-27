@@ -45,5 +45,5 @@ int check_pal(char *s, int start, int end)
 	if (s[start] != s[end])
 		return (0);
 
-	return (check_pal(s, i + 1, len - 1));
+	return (check_pal(s, start + 1, end - 1));
 }
