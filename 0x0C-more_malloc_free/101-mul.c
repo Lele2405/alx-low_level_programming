@@ -2,14 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ERR_MSG "Error"
-
 /**
- * is_digit - checks if a string contains a non-digit char
- * @s: string to be evaluated
+ * is_digit - checks if a string contains only digits.
+ * @s: The string to be evaluated.
  *
- * Return: 0 if a non-digit is found 1 otherwise
+ * Return: 1 if all characters in the string are digits, 0 otherwise.
  */
+
 int is_digit(char *s)
 {
 	int i = 0;
@@ -24,18 +23,32 @@ int is_digit(char *s)
 }
 
 /**
- * _strlen - returns the length of a string
- * @s: string to evaluate
+ * main - Entry point of the program.
+ * @argc: The number of command-line arguments.
+ * @argv: An array of strings containing the command-line arguments.
  *
- * Return: the length of the string
+ * Return: 0 on success, 98 on error.
  */
-int _strlen(char  *s)
-{
-	int i = 0;
 
-	while  (s[i] != '\0')
+int main(int argc, char *argv[])
+{
+	if (argc != 3)
 	{
-		i++;
+		printf("Error\n");
+		return (98);
 	}
-	return (i);
+
+	if (!is_digit(argv[1]) || !is_digit(argv[2]))
+	{
+		printf("Error\n");
+		return (98);
+	}
+
+	int num1 = atoi(argv[1]);
+	int num2 = atoi(argv[2]);
+	int result = num1 * num2;
+
+	printf("%d\n", result);
+
+	return (0);
 }
