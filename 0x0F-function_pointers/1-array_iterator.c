@@ -7,7 +7,7 @@
  * @action: A pointer to the function to be applied to each element
  * Return: void
  */
-void array_iterator(int *array, size_t size, void (*action)(int))
+void array_iterator(int *array, size_t size, void (*action)(int));
 {
 	unsigned int i;
 
